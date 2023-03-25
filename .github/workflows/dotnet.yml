@@ -13,6 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+     run:
+      working-directory: home
 
     steps:
     - uses: actions/checkout@v3
@@ -32,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
        name: website
-       path: /home/runner/work/simple-feed-reader/simple-feed-reader/website/**
+       path: simple-feed-reader/website/**
        if-no-files-found: error
 
       
